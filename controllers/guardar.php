@@ -1,6 +1,6 @@
 <?php
 
-require "db/conexion.php";
+require "../db/conexion.php";
 
 $nombre = $_POST['nombre'];
 $stock = (int)$_POST['stock'];
@@ -17,6 +17,6 @@ $consulta->execute([
     ':precio' => $precio
 ]);
 
-header("Location: index.php");
+header("Location: ../index.php");
 
 ?>

@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require "db/conexion.php";
+require "../db/conexion.php";
 
 $id = $_POST["id"];
 $nombre = $_POST["nombre"];
@@ -19,7 +19,7 @@ $consulta->execute([
     ':precio' => $precio,
 ]);
 
-header("Location: index.php?res=ok")
+header("Location: ../index.php?res=ok")
 
 
 ?>
