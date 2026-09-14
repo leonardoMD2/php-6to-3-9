@@ -17,11 +17,11 @@ if(empty($usuario) || empty($password) || empty($rol)) {
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 
-$consulta = $conexion->prepare("INSERT INTO usuarios (usuario, contrasena, rol) VALUES (:usuario, :contrasena, :rol)");
+$consulta = $conexion->prepare("INSERT INTO usuarios (usuario, contrasena, roll) VALUES (:usuario, :contrasena, :roll)");
 $consulta->execute([
     ':usuario' => $usuario,
     ':contrasena' => $passwordHash,
-    ':rol' => $rol
+    ':roll' => $rol
 ]);
 
 header("Location: ../index.php");

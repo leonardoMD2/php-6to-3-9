@@ -20,7 +20,7 @@ $user = $stmt->fetch();
 
 if (password_verify($password, $user["contrasena"])){
     $_SESSION["usuario"] = $user["usuario"];
-    $_SESSION["rol"] = $user["rol"];
+    $_SESSION["rol"] = $user["roll"];
     
     header("Location: ../index.php");
 }else{
