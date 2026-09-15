@@ -5,7 +5,7 @@
 
     <section class="formulario">
         <h2>Login</h2>
-        <form class="form" action="controllers/loginController.php" method="POST">
+        <form class="form" action="actions/loginController.php" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <button class="btn-submit" type="submit">Login</button>

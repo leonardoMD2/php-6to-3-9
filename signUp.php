@@ -2,7 +2,7 @@
 <body>
     <button class="btn-close"><</button>
     <section class="formulario">
-        <form class="form" action="controllers/signUpController.php" method="POST">
+        <form class="form" action="actions/signUpController.php" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <input type="text" name="rol" placeholder="admin/user">

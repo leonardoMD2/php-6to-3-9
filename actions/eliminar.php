@@ -1,7 +1,7 @@
 <?php
     
     require "auth.php";
-    require "../db/conexion.php";
+    require "../config/conexion.php";
 
     if (es_admin()) {
 

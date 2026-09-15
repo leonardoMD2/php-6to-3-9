@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
-require "../db/conexion.php";
+require "../config/conexion.php";
 
 $username = $_POST['username'];
 $password = $_POST['password'];

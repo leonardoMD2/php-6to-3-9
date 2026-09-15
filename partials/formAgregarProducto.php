@@ -1,7 +1,7 @@
 
 <section class="formulario">
     <h2 class="form-title">Agregar producto</h2>
-    <form class="form" action="controllers/guardar.php" method="POST">
+    <form class="form" action="actions/guardar.php" method="POST">
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" id="nombre" required>
         <label for="stock">Stock</label>

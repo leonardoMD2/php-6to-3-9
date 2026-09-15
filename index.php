@@ -1,6 +1,7 @@
 <?php
-require "db/conexion.php";
-session_start();
+require "config/conexion.php";
+// session_start();
+require "actions/auth.php";
 
 $resultado = $conexion->query('SELECT * FROM productos');
 
@@ -12,6 +13,27 @@ $res = $_GET["res"] ?? "";
 
     <nav class="nav">
             <h1>Clase 15 - CRUD con PHP</h1>
+
+            <?php if (esta_logeado()): ?>
+
+                <p>Estás logueado como <?= $_SESSION["usuario"] ?></p>
+
+            <?php else: ?>
+
+                <p>No estás logueado</p>
+
+            <?php endif; ?>
+
+            <?php if (es_admin()): ?>
+
+                <p>👑 Sos administrador</p>
+
+            <?php else: ?>
+
+                <p>👤 Sos usuario normal</p>
+
+            <?php endif; ?>
+
             <section>
                 <a href="login.php">Login</a>
                 <a href="signUp.php">sing up</a>
@@ -36,7 +58,7 @@ $res = $_GET["res"] ?? "";
                 <p>Stock disponible: <?= $producto['stock']; ?></p>
                 <p>$<?= $producto['precio']; ?></p>
                 <a href="editar.php?id=<?= $producto['id']; ?>">Editar</a>
-                <a href="controllers/eliminar.php?id=<?= $producto['id']; ?>">Eliminar</a>
+                <a href="actions/eliminar.php?id=<?= $producto['id']; ?>">Eliminar</a>
             </article>
             <?php endforeach; ?>
         </section>

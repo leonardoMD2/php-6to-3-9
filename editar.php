@@ -1,6 +1,6 @@
 <?php
 
-require "db/conexion.php";
+require "config/conexion.php";
 
 $id = $_GET["id"];
 
@@ -19,7 +19,7 @@ $producto = $consulta->fetch();
 
     <section class="formulario">
         <h2>Modificar producto</h2>
-        <form class="form" action="controllers/actualizar.php" method="POST">
+        <form class="form" action="actions/actualizar.php" method="POST">
             <input type="number" name="id" hidden value="<?= $producto["id"]; ?>">
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre" value="<?= $producto["nombre"]; ?>" required>
