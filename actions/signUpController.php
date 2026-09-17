@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require "../db/conexion.php";
+require "../config/conexion.php";
 
 $usuario = $_POST['username'];
 $password = $_POST['password'];
@@ -17,11 +17,11 @@ if(empty($usuario) || empty($password) || empty($rol)) {
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 
-$consulta = $conexion->prepare("INSERT INTO usuarios (usuario, contrasena, rol) VALUES (:usuario, :contrasena, :rol)");
+$consulta = $conexion->prepare("INSERT INTO usuarios (usuario, contrasena, roll) VALUES (:usuario, :contrasena, :roll)");
 $consulta->execute([
     ':usuario' => $usuario,
     ':contrasena' => $passwordHash,
-    ':rol' => $rol
+    ':roll' => $rol
 ]);
 
 header("Location: ../index.php");

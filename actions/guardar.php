@@ -1,6 +1,6 @@
 <?php
 
-require "../db/conexion.php";
+require "../config/conexion.php";
 
 $nombre = $_POST['nombre'];
 $stock = (int)$_POST['stock'];
